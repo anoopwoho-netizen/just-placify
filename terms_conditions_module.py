@@ -365,16 +365,18 @@ def render_tc_acceptance_page():
         st.error("❌ Unable to fetch T&C PDF from Google Drive")
         st.info("📌 Please check if Terms_Version_master folder has any PDF files")
         return False
-    
+    col_left, col_center, col_right = st.columns([0.2, 1.6, 0.2])
+    with col_center:
     # Header
-    #st.markdown("<div class='tc-container'>", unsafe_allow_html=True)
-    st.markdown("<div class='tc-container' style='max-width: 900px; margin-left: auto; margin-right: auto;'>", unsafe_allow_html=True)
-    st.markdown("<div class='tc-header'>", unsafe_allow_html=True)
-    st.markdown("# ⚖️ Terms & Conditions")
-    st.markdown(f"<div class='version-badge'>Version {version}</div>", unsafe_allow_html=True)
-    st.markdown(f"<p>Please read and accept the Terms & Conditions to proceed</p>", unsafe_allow_html=True)
-    st.markdown("</div>", unsafe_allow_html=True)
-    st.markdown("</div>", unsafe_allow_html=True)
+    
+        #st.markdown("<div class='tc-container'>", unsafe_allow_html=True)
+        #st.markdown("<div class='tc-container' style='max-width: 900px; margin-left: auto; margin-right: auto;'>", unsafe_allow_html=True)
+        st.markdown("<div class='tc-header'>", unsafe_allow_html=True)
+        st.markdown("# ⚖️ Terms & Conditions")
+        st.markdown(f"<div class='version-badge'>Version {version}</div>", unsafe_allow_html=True)
+        st.markdown(f"<p>Please read and accept the Terms & Conditions to proceed</p>", unsafe_allow_html=True)
+        st.markdown("</div>", unsafe_allow_html=True)
+        st.markdown("</div>", unsafe_allow_html=True)
     
     # PDF Display
     st.markdown("<div class='tc-pdf-container'>", unsafe_allow_html=True)
